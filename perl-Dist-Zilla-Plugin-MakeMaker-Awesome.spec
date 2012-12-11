@@ -1,30 +1,30 @@
 %define upstream_name    Dist-Zilla-Plugin-MakeMaker-Awesome
 %define upstream_version 0.12
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    A more awesome MakeMaker plugin for Dist::Zilla
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	A more awesome MakeMaker plugin for Dist::Zilla
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Dist::Zilla::File::InMemory)
-BuildRequires: perl(Dist::Zilla::Plugin::MakeMaker)
-BuildRequires: perl(Dist::Zilla::Role::BuildRunner)
-BuildRequires: perl(Dist::Zilla::Role::InstallTool)
-BuildRequires: perl(Dist::Zilla::Role::TestRunner)
-BuildRequires: perl(Dist::Zilla::Role::TextTemplate)
-BuildRequires: perl(List::MoreUtils)
-BuildRequires: perl(Moose)
-BuildRequires: perl(Moose::Autobox)
-BuildRequires: perl(MooseX::Types::Moose)
-BuildRequires: perl(namespace::autoclean)
+BuildRequires:	perl-devel
+BuildRequires:	perl(Dist::Zilla::File::InMemory)
+BuildRequires:	perl(Dist::Zilla::Plugin::MakeMaker)
+BuildRequires:	perl(Dist::Zilla::Role::BuildRunner)
+BuildRequires:	perl(Dist::Zilla::Role::InstallTool)
+BuildRequires:	perl(Dist::Zilla::Role::TestRunner)
+BuildRequires:	perl(Dist::Zilla::Role::TextTemplate)
+BuildRequires:	perl(List::MoreUtils)
+BuildRequires:	perl(Moose)
+BuildRequires:	perl(Moose::Autobox)
+BuildRequires:	perl(MooseX::Types::Moose)
+BuildRequires:	perl(namespace::autoclean)
 
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildArch:	noarch
 
 Obsoletes: perl-Dist-Zilla-Plugin-OverridableMakeMaker
 
@@ -43,23 +43,17 @@ Then, in your _dist.ini_:
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes META.yml LICENSE README META.json
 %{_mandir}/man3/*
-%perl_vendorlib/*
-
+%{perl_vendorlib}/*
 
