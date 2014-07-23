@@ -1,9 +1,9 @@
 %define upstream_name    Dist-Zilla-Plugin-MakeMaker-Awesome
-%define upstream_version 0.12
+%define upstream_version 0.20
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	A more awesome MakeMaker plugin for Dist::Zilla
 License:	GPL+ or Artistic
@@ -56,4 +56,3 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes META.yml LICENSE README META.json
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-

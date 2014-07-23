@@ -1,2 +1,4 @@
+removed_sources:
+  Dist-Zilla-Plugin-MakeMaker-Awesome-0.12.tar.gz: 75ce11593cb931a0247249bd36f541ef1e395c0f
 sources:
-  "Dist-Zilla-Plugin-MakeMaker-Awesome-0.12.tar.gz": 75ce11593cb931a0247249bd36f541ef1e395c0f
+  Dist-Zilla-Plugin-MakeMaker-Awesome-0.20.tar.gz: 3ea57e223a0377709bdd6cc388241d00712e6ea4
