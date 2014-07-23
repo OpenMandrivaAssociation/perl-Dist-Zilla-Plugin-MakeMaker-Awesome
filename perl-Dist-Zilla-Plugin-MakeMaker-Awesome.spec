@@ -12,6 +12,7 @@ Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Path::Tiny)
 BuildRequires:	perl(Dist::Zilla::File::InMemory)
 BuildRequires:	perl(Dist::Zilla::Plugin::MakeMaker)
 BuildRequires:	perl(Dist::Zilla::Role::BuildRunner)
